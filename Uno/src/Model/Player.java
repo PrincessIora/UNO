@@ -13,6 +13,14 @@ public class Player {
         hand.add(deck.drawCard());
     }
 
+    public void playCard(Card selected) {
+        hand.remove(selected);
+    }
+
+    public boolean hasUno(){
+        return hand.size() == 1;
+    }
+
     public String getName() {
         return name;
     }

@@ -23,4 +23,19 @@ public class GameLogic {
                 break;
         }
     }
+
+    public void skipNextPlayer(GameState state) {
+        state.advanceTurn();
+    }
+    public void reverseDirection(GameState state) {
+        state.reverseDirection();
+    }
+    public void forceDraw(GameState state, int count) {
+        state.advanceTurn();
+        Player next = state.getCurrentPlayer();
+
+        for (int i = 0; i < count; i++){
+            next.drawCard(state.getDeck());
+        }
+    }
 }
