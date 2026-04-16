@@ -39,8 +39,8 @@ public class Deck {
 
             // Wild Cards 4 of each
             for (int i = 0; i < 4; i++) {
-                drawPile.add(new Card(color, Card.Value.WILD));
-                drawPile.add(new Card(color, Card.Value.WILD_DRAW_FOUR));
+                drawPile.add(new Card(Card.Color.WILD, Card.Value.WILD));
+                drawPile.add(new Card(Card.Color.WILD, Card.Value.WILD_DRAW_FOUR));
             }
 
         }
@@ -59,7 +59,7 @@ public class Deck {
 
     public Card drawCard() {
         if (drawPile.isEmpty()) {
-            shuffle(drawPile);
+            reshuffle();
         }
         return drawPile.remove(0);
     }

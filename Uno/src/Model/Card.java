@@ -19,4 +19,10 @@ public class Card {
     public Value getValue() {
         return value;
     }
+
+    public String getImagePath(){
+        return "/Resources/" +
+                color.name().toLowerCase() + "_" +
+                value.name().toLowerCase() + ".png";
+    }
 }
